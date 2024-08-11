@@ -1,0 +1,26 @@
+h1 {
+  font-weight: 900;
+  color: red;
+  font-size: 50px;
+  margin: 10px;
+  margin-bottom: 20px;
+}
+
+input {
+  width: 100%;
+}
+
+button{
+  min-width: 80px;
+}
+
+.new-row-custom {
+  margin: 5px 7px;
+}
+
+.items-container{
+  text-align: left;
+}
+.add-container{
+  text-align: left;
+}

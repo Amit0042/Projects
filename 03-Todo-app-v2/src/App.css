@@ -1,0 +1,23 @@
+.heading {
+  background-color: black;
+}
+
+
+input {
+  width: 100%;
+}
+
+button{
+  min-width: 80px;
+}
+
+.new-row-custom {
+  margin: 5px 7px;
+}
+
+.items-container{
+  text-align: left;
+}
+.add-container{
+  text-align: left;
+}

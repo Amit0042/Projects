@@ -1,0 +1,10 @@
+.calculator-container{
+    border : solid black 1px;
+    width: 200px;
+  }
+
+.button-container{
+    display : flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }  
