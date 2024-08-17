@@ -1,0 +1,9 @@
+.display-container{
+    text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+    .display-container{
+        width: auto;
+    }
+}

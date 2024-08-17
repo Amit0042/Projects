@@ -1,0 +1,20 @@
+.main-container {
+    text-align: center;
+    height: 200px;
+    margin: auto;
+    margin-top: 15%;
+    border: solid black 2px;
+    max-width: 30%;
+    padding-top: 20px; 
+}
+
+@media screen and (max-width: 600px) {
+    .main-container{
+        text-align: center;
+        height: 200px;
+        margin: auto;
+        margin-top: 40%;
+        max-width: 80%;
+        padding-top: 20px; 
+    }
+}
