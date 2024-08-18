@@ -27,16 +27,50 @@ function App() {
 
   const [todoItems, setTodoItems] = useState([])
 
-  const handleNewItem = (itemName, itemDueDate) => {
+
+  //Below code lines will work, no doubt, but in case if it is a complex app and multiple operations are occurring simultaneously then in that case it might give us wrong results. 
+  // Reason for the wrong results: 
+  // React works in async form means React processes many tasks at once, then it might happen is that we can  get the current value(i.e. itemName for example) as an older or previous value. 
+  // So, to solve this problem we have a solution: 
+
+  /* const handleNewItem = (itemName, itemDueDate) => {
     // console.log(`New Item Added: ${itemName} and Date: ${itemDueDate}`);
     const newTodoItems = [...todoItems, {
       todoName: itemName,
       dueDate: itemDueDate
     }]
 
-    setTodoItems(newTodoItems)
+    setTodoItems(newTodoItems) 
+  */
 
+  // The solution for the above problem :
+  // If our set method is working on the basis of previous value, Then try to pass a method(callback function) instead of a value to the set method. The callback function will take an argument i.e. currVal and it will get the currVal and now on the basis of the currVal return the new Value. So, as a solution put the newTodoItems variable inside the callback function and in the newTodoItems variable use the currVal instead of the todoItems.
+
+  const handleNewItem = (itemName, itemDueDate) => {
+    // This format can also be used
+
+    // setTodoItems((currVal)=>{
+    //   // console.log(currVal)
+    //   const newTodoItems = [...currVal, {
+    //     todoName: itemName,
+    //     dueDate: itemDueDate
+    //   }]
+    //   return newTodoItems
+    // })
+
+
+    // Another format for the solution
+
+    setTodoItems((currVal)=> // no need of the parenthesis because it is only one line code.
+      [...currVal, { // No need of the variable name.
+        todoName: itemName,
+        dueDate: itemDueDate
+      }] // No need to write the return statement by default last value gets returned.
+    )
   }
+
+  
+
 
   const handleOnClickItems = (todoName) => {
     const newItemsAfterDeletion = todoItems.filter((item)=>{
